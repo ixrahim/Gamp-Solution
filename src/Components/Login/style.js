@@ -26,6 +26,8 @@ export const FormContainer = styled.div`
 	height: 450px;
 	border-radius: 10px;
 	border: 0.5px solid #858585;
+	border-box: content-box;
+	/* border: 0.25px solid #858585; */
 	background: #fff;
 	position: relative;
 	@media only screen and (min-width: 320px) and (max-width: 720px) {
@@ -53,22 +55,22 @@ export const Container = styled.div`
 	height: 100%;
 	width: auto;
 	display: flex;
-	/* justify-content: center; */
+	border-radius: 10px;
 	flex-direction: column;
 	padding: 1.5rem 3rem;
 	overflow: hidden;
 	box-sizing: border-box;
 	@media only screen and (min-width: 320px) and (max-width: 360px) {
-		padding: 1.5rem 2rem;
+		padding: 1.5rem 1.3rem;
 	}
 	@media only screen and (min-width: 360px) and (max-width: 414px) {
-		padding: 1.5rem 2rem;
+		padding: 1.5rem 1.3rem;
 	}
 	@media only screen and (min-width: 414px) and (max-width: 786px) {
-		padding: 1.5rem 2rem;
+		padding: 1.5rem 1.3rem;
 	}
 	@media only screen and (min-width: 786px) and (max-width: 986px) {
-		padding: 1.5rem 2rem;
+		padding: 1.5rem 1.3rem;
 	}
 `;
 

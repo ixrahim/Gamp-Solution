@@ -15,46 +15,10 @@ import { setIsLoggedIn, setAccessToken } from '../../../redux/slice/appSlice';
 import { batch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import ControlledInput from './Input';
+import { usePostData } from '../../../helpers/hooks/useAxios';
 
 function LoginFormContainer() {
-	const navigate = useNavigate();
-	const [, dispatch] = useAppContext();
-	const [email, setEmail] = useState('');
-	const [pass, setPass] = useState('');
-	const postData = () => {
-		axios
-			.post('https://gamp-server-staging.herokuapp.com/v1/auth/login', {
-				email: email,
-				password: pass,
-			})
-			.then(function (response) {
-				if (response) {
-					const {
-						data: { accesstoken },
-						success,
-					} = response.data;
-
-					batch(() => {
-						dispatch(setIsLoggedIn(success));
-						dispatch(setAccessToken(accesstoken));
-					});
-					navigate('/dashboard');
-				}
-			})
-			.catch(function (error) {
-				console.log(error);
-			});
-	};
-	const submitForm = (e) => {
-		e.preventDefault();
-		postData();
-	};
-	const handleEmailChange = (e) => {
-		setEmail(e.target.value);
-	};
-	const handlePassChange = (e) => {
-		setPass(e.target.value);
-	};
+	const [submitForm, handleEmailChange, handlePassChange] = usePostData();
 
 	return (
 		<FormContainer>
