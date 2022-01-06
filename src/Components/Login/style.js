@@ -28,9 +28,13 @@ export const FormContainer = styled.div`
 	border: 0.5px solid #858585;
 	background: #fff;
 	position: relative;
+	@media only screen and (min-width: 320px) and (max-width: 720px) {
+		height: 495px;
+	}
 `;
 
 export const LoginImageContainer = styled.div`
+	margin-bottom: 70px;
 	@media only screen and (min-width: 320px) and (max-width: 360px) {
 		display: none;
 	}
@@ -136,6 +140,13 @@ export const FormFooter = styled.div`
 	}
 	div {
 		position: absolute;
-		bottom: -55px;
+		bottom: -40px;
+		#copy {
+			color: #858585;
+			font-size: 15px;
+		}
+		@media only screen and (min-width: 320px) and (max-width: 720px) {
+			bottom: 45px;
+		}
 	}
 `;

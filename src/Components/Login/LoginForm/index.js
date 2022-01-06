@@ -86,7 +86,7 @@ function LoginFormContainer() {
 				<FormFooter>
 					<p>Forgot Password?</p>
 					<div>
-						<p>© GAMP</p>
+						<p id='copy'>© GAMP</p>
 					</div>
 				</FormFooter>
 			</Container>
